@@ -30,26 +30,8 @@ fn main() {
    // let  buf = String::new();
 
     loop {
-        // let mut buf = [0u8; 1500];
-        // let sock = socket.try_clone().expect("Failed to clone socket");
-
-        // let (bytes, src_addr) = socket.peek_from(&mut buf).expect("Could not get the data");
-        
-        // match socket.recv_from(&mut buf) {
-        //     Ok((_, src)) => {
-        //         thread::spawn(move || {
-        //             println!("Handling connection from {}", src);
-                    
-        //             println!("bytes {} , addr {}", bytes, src_addr);
-        //             sock.send_to(&buf, &src).expect("Failed to send a response");
-        //         });
-        //     },
-        //     Err(e) => {
-        //         eprintln!("couldn't recieve a datagram: {}", e);
-        //     }
-        // }
         socket.send_to(&json_str.as_bytes(), &remote_adrr).expect("Unable to send data!");
-        //delay();
+        
     }
     
     
